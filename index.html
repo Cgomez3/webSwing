@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <!-- Theme Made By www.w3schools.com -->
-  <title>Bootstrap Theme Company Page</title>
+  <title>DGomApiJava</title>
+  <link rel="shortcut icon" href="img/Imagen3.png" />
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -377,7 +378,7 @@
         <div class="panel-footer">
           <h3>$30</h3>
           <h4>Api solo</h4>
-          <button class="btn btn-lg">Sign Up</button>
+          <button class="btn btn-lg">Comprar</button>
         </div>
       </div>      
     </div>     
@@ -393,7 +394,7 @@
         <div class="panel-footer">
           <h3>$60</h3>
           <h4>Oferta mas 4 horas de Capacitación</h4>
-          <button class="btn btn-lg">Sign Up</button>
+          <button class="btn btn-lg">Comprar</button>
         </div>
       </div>      
     </div>       
@@ -423,7 +424,7 @@
       <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
       <div class="row">
         <div class="col-sm-12 form-group">
-          <button class="btn btn-default pull-right" type="submit">Enviar</button>
+          <button id="btnEnviar" class="btn btn-default pull-right" type="submit">Enviar</button>
         </div>
       </div>
     </div>
@@ -442,6 +443,9 @@
 
 <script>
 $(document).ready(function(){
+  $('#btnEnviar').click(function(){
+    alert("Estamos trabajando en esto, puede comunicarse con los datos del contacto.");
+  });
   // Add smooth scrolling to all links in navbar + footer link
   $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
     // Make sure this.hash has a value before overriding default behavior
