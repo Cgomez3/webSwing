@@ -194,6 +194,23 @@
       font-size: 150px;
     }
   }
+  .video-responsive {
+position: relative;
+padding-bottom: 56.25%; /* 16/9 ratio */
+padding-top: 30px; /* IE6 workaround*/
+height: 0;
+overflow: hidden;
+}
+
+.video-responsive iframe,
+.video-responsive object,
+.video-responsive embed {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+}
   </style>
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
@@ -238,16 +255,30 @@
   <div class="row">
     <div class="col-sm-6">
       <h2>Acerca de</h2><br>
-      <h4><b>DGomApiJava</b> ofrece un software robusto realizado en Java para aplicaciones de escritorio. Nos centramos  en el diseño de la interfaz gráfica del Usuario (GUI) aplicando Java Swing, la idea es reducir el tiempo de trabajo al momento de implementar aplicaciones, facilitando el uso de sus controles super dinamico.</h4><br>
-      <p> <b>DGomApiJava</b> es una arquitectura de escritorio con diseño estandarizado y unificado para Java Swing. Esta implementación hace que la vista final del usuario sea mas atractiva y la lógica de programación sea más fácil. Esta basado mas al front-end de las aplicaciones. Ademas, Brindamos capacitación y soporte tecnico de nuestro software. Por ejemplo, guiamos el como utilizar el API y hacer uso de patrones de diseño como: Delegate,Interface, Marker Interface,Singleton,factory Method,Adapter, etc, Mas adelante implemetaremos plantillas de diseño segun a solicitud nuestros clientes.</p>
+      <h4><b>DGomApiJava</b> ofrece un API robusto realizado en Java para aplicaciones de escritorio. Y esta centrado para el diseño de la interfaz gráfica del Usuario (GUI) aplicando Java Swing.</h4><br>
+      <p><b>DGomApiJava</b> Es una arquitectura para aplicaciones de escritorio con diseño estandarizado Java Swing basado mas al front-end de las aplicaciones. Se a optimizado los controles de Java (JTexfield,Jlabel,JButton,JProgresbar,JTable,JRadioButton,JCheckBox,JPanel,JInternalFrame,JFrame, etc) para que cualquier programador se combierta en un diseñador de calidad, creando formularios super atractivos y haciendo que la lógica de programación sea más fácil. En conclucion, el Api esta basado mas al front-end de las aplicaciones. Ademas, Brindamos capacitación y soporte tecnico de nuestro Api. Por ejemplo, guiamos el como utilizar el API y hacer uso de patrones de diseño como: Delegate,Interface, Marker Interface,Singleton,factory Method,Adapter, etc, Mas adelante implemetaremos plantillas de diseño segun a solicitud nuestros clientes.</p>
       
       <!--br><button class="btn btn-default btn-lg">Get in Touch</button-->
     </div>
     <div class="col-sm-6">
+      <h2></h2><br>
       <!--span class="glyphicon glyphicon-signal logo"></span-->
-      <span ><img src="img/formulario.png"/></span>
+      <p><center><span ><img src="img/formulario.png"/></span></center></p>
     </div>
   </div>
+  <!--div class="row">
+     <div class="col-sm-2"></div>
+     <div class="col-sm-8">
+       <div class="video-responsive">
+           <iframe  src="https://www.youtube.com/embed/sOnqjkJTMaA" frameborder="0" allowfullscreen="allowfullscreen">
+             
+           </iframe>
+         </div>
+         <a href="https://www.youtube.com/embed/sOnqjkJTMaA">Ver Video</a>
+     </div>
+     <div class="col-sm-2"></div>
+        
+  </div-->
 </div>
 
 <div class="container-fluid bg-grey">
