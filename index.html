@@ -212,6 +212,20 @@ width: 100%;
 height: 100%;
 }
   </style>
+  <script type="text/javascript">
+    const valores = window.location.search;
+    const urlParams = new URLSearchParams(valores);
+    var valorDescarga = urlParams.get('SUCCESFULL');
+
+    
+    if(valorDescarga == 1){
+       alert('compra exitosa');
+       var url="upload/D_JFrameWordDesingJava.jar";    
+       window.open(url, 'Download');
+    }else{
+      alert('no procedio con la compra');
+    };
+  </script>
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
 
