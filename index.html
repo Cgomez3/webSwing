@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
   <style>
   body {
     font: 400 15px Lato, sans-serif;
@@ -212,17 +213,24 @@ width: 100%;
 height: 100%;
 }
   </style>
+  <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
   <script type="text/javascript">
     const valores = window.location.search;
     const urlParams = new URLSearchParams(valores);
     var valorDescarga = urlParams.get('SUCCESFULL');
-    
-    if(valorDescarga == 1){
-       var url="https://dgomapijava.com/upload/DGomApiJava.jar";    
-       window.open(url, 'Download');
-       window.location.href='index.html';
-    }else{
-    };
+    $(document).ready(function(){
+
+        if(valorDescarga == 1){
+ $('#btnDescarga').css('visibility', 'visible');
+        }else{
+    	$('#btnDescarga').css('visibility', 'hidden');
+        }
+    });
+    function descargar_objeto(){
+    	var url="https://dgomapijava.com/upload/DGomApiJava.jar"; 
+                // simulamos el click del mouse en el boton del formulario
+         window.open(url, 'Download');
+    }
   </script>
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
@@ -252,6 +260,8 @@ height: 100%;
 <div class="jumbotron text-center">
   <h1><span ><img class="tam-imagen" src="img/Imagen4.png"/></span>DGomApiJava</h1> 
   <p>Versátil API Para Diseño De Aplicaciones De escritorio En Java</p> 
+  <a id="btn_descarga" href="https://dgomapijava.com/upload/DGomApiJava.jar" download="DGomApiJava.jar">descargar</a>
+  
   <!--form>
     <div class="input-group">
       <input type="email" class="form-control" size="50" placeholder="Email Address" required>
@@ -424,13 +434,18 @@ height: 100%;
             <div class="panel-footer">
               <h3>$30</h3>
               <h4>Precio del Api</h4>
-                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-					<input type="hidden" name="cmd" value="_s-xclick">
-					<input type="hidden" name="hosted_button_id" value="JJCGBEXJRY72A">
-					<input type="image" src="https://www.paypalobjects.com/es_ES/ES/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal, la forma rápida y segura de pagar en Internet.">
-					<img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">
-				</form>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="JJCGBEXJRY72A">
+<input type="image" src="https://www.paypalobjects.com/es_ES/ES/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal, la forma rápida y segura de pagar en Internet.">
+<img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">
 
+
+
+</form>
+</div>
+<div class="panel-footer">
+<input type="submit" id="btnDescarga" onclick="descargar_objeto();" name="">
             </div>
           </div>      
         </div> 
