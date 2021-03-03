@@ -218,18 +218,23 @@ height: 100%;
     const valores = window.location.search;
     const urlParams = new URLSearchParams(valores);
     var valorDescarga = urlParams.get('SUCCESFULL');
+    
     $(document).ready(function(){
-
         if(valorDescarga == 1){
- $('#btnDescarga').css('visibility', 'visible');
+          sessionStorage.setItem("succesfull",valorDescarga);
+          $('#btnDescarga').css('visibility', 'visible');
+          window.href="index.html";
         }else{
-    	$('#btnDescarga').css('visibility', 'hidden');
+    	  $('#btnDescarga').css('visibility', 'hidden');
+    	  sessionStorage.setItem("succesfull",0);
         }
     });
+
     function descargar_objeto(){
     	var url="https://dgomapijava.com/upload/DGomApiJava.jar"; 
                 // simulamos el click del mouse en el boton del formulario
          window.open(url, 'Download');
+
     }
   </script>
 </head>
