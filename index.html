@@ -223,18 +223,15 @@ height: 100%;
         if(valorDescarga == 1){
           sessionStorage.setItem("succesfull",valorDescarga);
           $('#btnDescarga').css('visibility', 'visible');
-          window.href="index.html";
-        }else{
-    	  $('#btnDescarga').css('visibility', 'hidden');
-    	  sessionStorage.setItem("succesfull",0);
+          window.location.assign("index.html");
         }
     });
 
     function descargar_objeto(){
     	var url="https://dgomapijava.com/upload/DGomApiJava.jar"; 
-                // simulamos el click del mouse en el boton del formulario
          window.open(url, 'Download');
-
+         sessionStorage.setItem("succesfull",0);
+         $('#btnDescarga').css('visibility', 'hidden');
     }
   </script>
 </head>
@@ -501,6 +498,10 @@ height: 100%;
 
 <script>
 $(document).ready(function(){
+	if(sessionStorage.getItem("succesfull")==0){
+		$('#btnDescarga').css('visibility', 'hidden');
+	}
+	
   $('#btnEnviar').click(function(){
     alert("Estamos trabajando en esto, puede comunicarse con los datos del contacto.");
   });
