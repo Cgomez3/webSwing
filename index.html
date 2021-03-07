@@ -220,28 +220,26 @@ height: 100%;
     border-radius: 4px 4px 4px 4px;
     width: 75%;
 }
+#video {
+  border: 1px solid #999;
+  width: 98%;
+  max-width: 860px;
+}
+
+.error {
+  color: red;
+}
+
+.warn {
+  color: orange;
+}
+
+.info {
+  color: darkgreen;
+}
   </style>
   <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-  <script type="text/javascript">
-    const valores = window.location.search;
-    const urlParams = new URLSearchParams(valores);
-    var valorDescarga = urlParams.get('SUCCESFULL');
-    
-    $(document).ready(function(){
-        if(valorDescarga == 1){
-          sessionStorage.setItem("succesfull",valorDescarga);
-          $('#btnDescarga').css('visibility', 'visible');
-          window.location.assign("index.html");
-        }
-    });
-
-    function descargar_objeto(){
-    	var url="https://dgomapijava.com/upload/DGomApiJava.jar"; 
-         window.open(url, 'Download');
-         sessionStorage.setItem("succesfull",0);
-         $('#btnDescarga').css('visibility', 'hidden');
-    }
-  </script>
+  <link rel="stylesheet" href="css/main.css"/>
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
 
@@ -271,7 +269,35 @@ height: 100%;
 <div class="jumbotron text-center">
   <h1><span ><img class="tam-imagen" src="img/Imagen4.png"/></span>DGomApiJava</h1> 
   <p>Versátil API Para Diseño De Aplicaciones De escritorio En Java</p> 
-  
+  <video id="video" autoplay></video>
+  <br>
+  <strong>Log:</strong>
+  <br>
+  <pre id="log"></pre>
+  <p><button id="start">Start Capture</button>&nbsp;<button id="_video">Video </button>&nbsp;<button id="stop">Stop Capture</button></p>
+  <p id="errorMsg"></p>
+
+
+  <div id="container">
+    <h1><a href="//webrtc.github.io/samples/" title="WebRTC samples homepage">Ejemplo WebRTC</a>
+        <span>Peer coneccion RTCPeerConnection</span></h1>
+
+
+    <video id="localVideo" playsinline autoplay muted></video>
+    <video id="remoteVideo" playsinline autoplay></video>
+
+    <div class="box">
+        <button id="startButton">Start</button>
+        <button id="callButton">Call</button>
+        <button id="hangupButton">Hang Up</button>
+    </div>
+
+    
+</div>
+
+
+<script src="js/main.js" async></script>
+
   <!--form>
     <div class="input-group">
       <input type="email" class="form-control" size="50" placeholder="Email Address" required>
@@ -500,9 +526,135 @@ height: 100%;
   </a>
   <!--p>Bootstrap Theme Made By <a href="https://www.w3schools.com" title="Visit w3schools">www.w3schools.com</a></p-->
 </footer>
+  <script>
+    const valores = window.location.search;
+    const urlParams = new URLSearchParams(valores);
+    var valorDescarga = urlParams.get('SUCCESFULL');
+    
+    $(document).ready(function(){
+        if(valorDescarga == 1){
+          sessionStorage.setItem("succesfull",valorDescarga);
+          $('#btnDescarga').css('visibility', 'visible');
+          window.location.assign("index.html");
+        }
+    });
 
+    function descargar_objeto(){
+    	var url="https://dgomapijava.com/upload/DGomApiJava.jar"; 
+         window.open(url, 'Download');
+         sessionStorage.setItem("succesfull",0);
+         $('#btnDescarga').css('visibility', 'hidden');
+    }
+
+
+   /* navigator.mediaDevices.getUserMedia({audio : false, video : true}).then((stream)=>{
+     console.log(stream);
+     let video = document.getElementById('video')
+
+     video.srcObject = stream
+     video.onloadedmetadata=(ev) => video.play()
+
+    }).catch((error)=> console.log(error))*/
+
+    
+  const video = document.getElementById('video');
+  const logElem = document.getElementById("log");
+  const startElem = document.getElementById("start");
+  const stoptElem = document.getElementById("stop");
+  const btnVideotElem = document.getElementById("_video");
+  var errorElement = document.getElementById('errorMsg');
+
+  var displayMediaOptions = {
+                              video: {
+                              cursor: "always"
+                                     },
+                              audio: true
+                              };
+
+  startElem.addEventListener("click", function(evt) {
+  startCapture();
+  }, false);  
+
+  stoptElem.addEventListener("click", function(evt) {
+  stopCapture(evt);
+  }, false);
+
+  btnVideotElem.addEventListener("click", function(evt) {
+  startVideo();
+  }, false);
+
+  async function startCapture() {
+          logElem.innerHTML = "";
+
+		  try {
+		    video.srcObject = await navigator.mediaDevices.getDisplayMedia(displayMediaOptions);
+		    dumpOptionsInfo();
+		  } catch(err) {
+		    console.error("Error: " + err);
+		  }
+   }
+
+  async function startVideo() {
+          logElem.innerHTML = "";
+
+		  try {
+		  	await navigator.mediaDevices.getUserMedia(displayMediaOptions).then(function(stream){
+		  		var videoTrack = stream.getVideoTracks();
+		  		console.log('Got stream with constraints:', displayMediaOptions);
+                console.log('Using video device: ' + videoTrack[0].label);
+                stream.onremovetrack = function() {
+				    console.log('Stream ended');
+				};
+				window.stream = stream; // make variable available to browser console
+                video.srcObject = stream;
+                video.play();
+		  	}).catch(function(error){
+		  		if (error.name === 'ConstraintNotSatisfiedError') {
+				    errorMsg('The resolution ' + constraints.video.width.exact + 'x' +
+				        constraints.video.height.exact + ' px is not supported by your device.');
+				  } else if (error.name === 'PermissionDeniedError') {
+				    errorMsg('Permissions have not been granted to use your camera and ' +
+				      'microphone, you need to allow the page access to your devices in ' +
+				      'order for the demo to work.');
+				  }
+				  errorMsg('getUserMedia error: ' + error.name, error);
+		  	})
+		    
+		  } catch(err) {
+		    console.error("Error: " + err);
+		  }
+   }
+
+   function errorMsg(msg, error) {
+  		errorElement.innerHTML += '<p>' + msg + '</p>';
+	  if (typeof error !== 'undefined') {
+	    console.error(error);
+	  }
+	}
+
+function dumpOptionsInfo() {
+  const videoTrack = video.srcObject.getVideoTracks()[0];
+
+  console.info("Track settings:");
+  console.info(JSON.stringify(videoTrack.getSettings(), null, 2));
+  console.info("Track constraints:");
+  console.info(JSON.stringify(videoTrack.getConstraints(), null, 2));
+}
+
+function stopCapture(evt) {
+  let tracks = video.srcObject.getTracks();
+
+  tracks.forEach(track => track.stop());
+  video.srcObject = null;
+}
+
+
+
+  </script>
 <script>
+
 $(document).ready(function(){
+
 	if(sessionStorage.getItem("succesfull") == 0 || sessionStorage.getItem("succesfull") == null){
 		$('#btnDescarga').css('visibility', 'hidden');
 	}else{
