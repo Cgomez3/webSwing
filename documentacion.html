@@ -252,6 +252,12 @@ height: 100%;
 .info {
   color: darkgreen;
 }
+.control-label {
+    color: #344cb7;
+}
+.img-small {
+   max-width: 100%;
+}
   </style>
   <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
   <!--link rel="stylesheet" href="../main.css"/-->
@@ -313,12 +319,88 @@ height: 100%;
     </div>
 
     </div>
-    <div class="card">
+<div class="card">
       <div class="thumbnail">
-        <h1>D_Label</h1> 
-         <p> </p>
+        <h1><b class="control-label">D_Label</b>(JLabel)</h1> 
+         <p>El ejemplo mostrado es una etiqueta(JLabel) con una imagen, color de fodo y lo estamos añadiendo en Panel</p>
+         <P>JPanel jPanel=new JPanel();</br>
+        jPanel.setBackground(Color.WHITE);</br>
+         <b class="control-label">D_Label</b> etiqueta= <b class="control-label">new D_Label</b> (2, 20,new ImageIcon(AppPrueba.class.getResource("facebook.png")) ,"Prueba Etiqueta",new Color(0,191,255),Color.BLACK);</br>
+       etiqueta.setForeground(Color.BLACK);</br>
+        etiqueta.setHorizontalAlignment(JLabel.CENTER);</br>
+        etiqueta.setPreferredSize(new Dimension(200, 40));</br>
+        jPanel.add(etiqueta);</P>
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="thumbnail card img-small">
+            <img src="img/labelresultado.png" alt="New York" width="100" height="100">
+            <center><p>Stroke=2 y arc=20</p></center>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="thumbnail card img-small">
+            <img src="img/labelresultado2.png" alt="New York" width="100" height="100">
+            <center><p>Stroke=1 y arc=10</p></center>
+            </div>
+          </div>
+        </div>
+        
+        
+      <h2>Constructores</h2>
+      <p>La siguiente imagen muestra algunos contructores que se puede usar </p>
+      <div class="row">
+        <div class="col-sm-8">
+          <div class="thumbnail card">
+            <img src="img/imagen5.png" alt="New York" width="100" height="100">
+          </div>
+        </div>
+      </div>
+
+      
     </div>
     </div>
+
+
+<div class="card">
+      <div class="thumbnail">
+        <h1><b class="control-label">D_TextField</b>(JTextField)</h1> 
+         <p>El control D_TextField(JTextField) permite al operador del programa ingresar una cadena de caracteres por teclado, del icono la x aparece solo cuando el mouse pasa por esa parte y podemos deshabilitar así txtfield.DisableButton(); </p>
+         <P>JPanel jPanel=new JPanel();</br>
+        jPanel.setBackground(Color.WHITE);</br>
+         <b class="control-label">D_TextField</b> txtfield= <b class="control-label">new D_TextField</b> (D_TextField.Type.NUMERIC, 2, 10,new Color(153, 204, 255));</br>
+        txtfield.setPreferredSize(new Dimension(200, 40));</br>
+        jPanel.add(txtfield);</P>
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="thumbnail card img-small">
+            <img src="img/jtextfielresultado.png" alt="New York" width="100" height="100">
+            <center><p>D_TextField.Type.NUMERIC, Stroke=2 y arc=10</p></center>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="thumbnail card img-small">
+            <img src="img/jtextfielresultado2.png" alt="New York" width="100" height="100">
+            <center><p>D_TextField.Type.CHARACTER, Stroke=1 y arc=5</p></center>
+            </div>
+          </div>
+        </div>
+        
+        
+      <h2>Constructores</h2>
+      <p>La siguiente imagen muestra algunos contructores que se puede usar </p>
+      <div class="row">
+        <div class="col-sm-8">
+          <div class="thumbnail card">
+            <img src="img/imagen6.png" alt="New York" width="100" height="100">
+          </div>
+        </div>
+      </div>
+
+      
+    </div>
+    </div>
+
+
   </div>
 </div>
 
