@@ -322,14 +322,12 @@ height: 100%;
 <div class="card">
       <div class="thumbnail">
         <h1><b class="control-label">D_Label</b>(JLabel)</h1> 
-         <p>El ejemplo mostrado es una etiqueta(JLabel) con una imagen, color de fodo y lo estamos añadiendo en Panel</p>
-         <P>JPanel jPanel=new JPanel();</br>
-        jPanel.setBackground(Color.WHITE);</br>
+         <p>El objeto de la clase D_Label que extiende de (JLabel) es un componente para colocar texto en un contenedor. Se utiliza para mostrar una sola línea de texto de solo lectura, para este ejemplo utilizamos el constructor que contiene el ancho de la línea(stroke), las esquinas redondeadas (arc), la imagen, el texto, color de fondo y el color de la línea de borde. </p>
+         <P>
          <b class="control-label">D_Label</b> etiqueta= <b class="control-label">new D_Label</b> (2, 20,new ImageIcon(AppPrueba.class.getResource("facebook.png")) ,"Prueba Etiqueta",new Color(0,191,255),Color.BLACK);</br>
        etiqueta.setForeground(Color.BLACK);</br>
         etiqueta.setHorizontalAlignment(JLabel.CENTER);</br>
-        etiqueta.setPreferredSize(new Dimension(200, 40));</br>
-        jPanel.add(etiqueta);</P>
+        etiqueta.setPreferredSize(new Dimension(200, 40));</P>
         <div class="row">
           <div class="col-sm-4">
             <div class="thumbnail card img-small">
@@ -347,7 +345,7 @@ height: 100%;
         
         
       <h2>Constructores</h2>
-      <p>La siguiente imagen muestra algunos contructores que se puede usar </p>
+      <p>La siguiente imagen mostramos algunos contructores que se puede usar </p>
       <div class="row">
         <div class="col-sm-8">
           <div class="thumbnail card">
@@ -366,11 +364,9 @@ height: 100%;
       <div class="thumbnail">
         <h1><b class="control-label">D_TextField</b>(JTextField)</h1> 
          <p>El control D_TextField(JTextField) permite al operador del programa ingresar una cadena de caracteres por teclado, del icono la x aparece solo cuando el mouse pasa por esa parte y podemos deshabilitar así txtfield.DisableButton(); </p>
-         <P>JPanel jPanel=new JPanel();</br>
-        jPanel.setBackground(Color.WHITE);</br>
+         <P>
          <b class="control-label">D_TextField</b> txtfield= <b class="control-label">new D_TextField</b> (D_TextField.Type.NUMERIC, 2, 10,new Color(153, 204, 255));</br>
-        txtfield.setPreferredSize(new Dimension(200, 40));</br>
-        jPanel.add(txtfield);</P>
+        txtfield.setPreferredSize(new Dimension(200, 40));</br></P>
         <div class="row">
           <div class="col-sm-4">
             <div class="thumbnail card img-small">
@@ -388,7 +384,7 @@ height: 100%;
         
         
       <h2>Constructores</h2>
-      <p>La siguiente imagen muestra algunos contructores que se puede usar </p>
+      <p>La siguiente imagen mostramos algunos contructores que se puede usar </p>
       <div class="row">
         <div class="col-sm-8">
           <div class="thumbnail card">
