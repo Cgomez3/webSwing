@@ -258,6 +258,12 @@ height: 100%;
 .img-small {
    max-width: 100%;
 }
+.img-small2 {
+    width: 113px;
+}
+img.imagen-boton {
+    width: 120px;
+}
   </style>
   <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
   <!--link rel="stylesheet" href="../main.css"/-->
@@ -362,42 +368,81 @@ height: 100%;
 
 <div class="card">
       <div class="thumbnail">
-        <h1><b class="control-label">D_TextField</b>(JTextField)</h1> 
-         <p>El control D_TextField(JTextField) permite al operador del programa ingresar una cadena de caracteres por teclado, del icono la x aparece solo cuando el mouse pasa por esa parte y podemos deshabilitar así txtfield.DisableButton(); </p>
-         <P>
-         <b class="control-label">D_TextField</b> txtfield= <b class="control-label">new D_TextField</b> (D_TextField.Type.NUMERIC, 2, 10,new Color(153, 204, 255));</br>
-        txtfield.setPreferredSize(new Dimension(200, 40));</br></P>
+          <h1><b class="control-label">D_TextField</b>(JTextField)</h1> 
+           <p>El control D_TextField(JTextField) permite al operador del programa ingresar una cadena de caracteres por teclado, del icono la x aparece solo cuando el mouse pasa por esa parte y podemos deshabilitar así txtfield.DisableButton(); </p>
+           <P>
+           <b class="control-label">D_TextField</b> txtfield= <b class="control-label">new D_TextField</b> (D_TextField.Type.NUMERIC, 2, 10,new Color(153, 204, 255));</br>
+          txtfield.setPreferredSize(new Dimension(200, 40));</br></P>
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="thumbnail card img-small">
+              <img src="img/jtextfielresultado.png" alt="New York" width="100" height="100">
+              <center><p>D_TextField.Type.NUMERIC, Stroke=2 y arc=10</p></center>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="thumbnail card img-small">
+              <img src="img/jtextfielresultado2.png" alt="New York" width="100" height="100">
+              <center><p>D_TextField.Type.CHARACTER, Stroke=1 y arc=5</p></center>
+              </div>
+            </div>
+          </div>
+          
+          
+        <h2>Constructores</h2>
+        <p>En la siguiente imagen mostramos algunos contructores que se puede usar </p>
         <div class="row">
-          <div class="col-sm-4">
-            <div class="thumbnail card img-small">
-            <img src="img/jtextfielresultado.png" alt="New York" width="100" height="100">
-            <center><p>D_TextField.Type.NUMERIC, Stroke=2 y arc=10</p></center>
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div class="thumbnail card img-small">
-            <img src="img/jtextfielresultado2.png" alt="New York" width="100" height="100">
-            <center><p>D_TextField.Type.CHARACTER, Stroke=1 y arc=5</p></center>
-            </div>
-          </div>
-        </div>
-        
-        
-      <h2>Constructores</h2>
-      <p>En la siguiente imagen mostramos algunos contructores que se puede usar </p>
-      <div class="row">
-        <div class="col-sm-8">
-          <div class="thumbnail card">
+          <div class="col-sm-8">
+            <div class="thumbnail card">
 
-            <img src="img/constructortextfield.png" alt="New York" width="100" height="100">
+              <img src="img/constructortextfield.png" alt="New York" width="100" height="100">
+            </div>
           </div>
-        </div>
+        </div>      
       </div>
+</div>
 
-      
-    </div>
-    </div>
+<div class="card">
+      <div class="thumbnail">
+          <h1><b class="control-label">D_Button</b>(JButton)</h1> 
+           <p>La clase D_Button(JButton) se utiliza para crear un botón etiquetado que tiene una implementación independiente de la plataforma. La aplicación da como resultado alguna acción cuando se presiona el botón ; </p>
+           <P>
+           <b class="control-label">D_Button</b> btnTwitter= <b class="control-label">new D_Button</b> (2, 10, D_Button.TypeButton.SQUARE,new ImageIcon(AppPrueba.class.getResource("twitter.png")), "ICON", Color.WHITE, Color.BLACK,Color.RED);</br>
+          btnTwitter.setPreferredSize(new Dimension(200, 50));</br></P>
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="thumbnail card img-small">
+              <img src="img/jbuttonsquare.png" alt="New York" width="100" height="100">
+              <center><p>D_Button.TypeButton.SQUARE, Stroke=2 y arc=0</p></center>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="thumbnail card img-small">
+              <img src="img/jbuttonrounded.png" alt="New York" width="100" height="100">
+              <center><p>D_Button.TypeButton.ROUNDED_CORNER, Stroke=1 y arc=10</p></center>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="thumbnail card img-small">
+              <img  class="imagen-boton" src="img/jbuttoncircle.png" alt="New York" width="50" height="50">
+              <center><p class="texto-plano">D_Button.TypeButton.CIRCLE, Stroke=1 y arc=0 <br/>btnTwitter.setPreferredSize(new Dimension(70,70)</p></center>
+              </div>
+            </div>
+          </div>
+          
+          
+        <h2>Constructores</h2>
+        <p>En la siguiente imagen mostramos algunos contructores que se puede usar </p>
+        <div class="row">
+          <div class="col-sm-8">
+            <div class="thumbnail card">
 
+              <img src="img/constructorbutton.png" alt="New York" width="100" height="100">
+            </div>
+          </div>
+        </div>      
+      </div>
+</div>
 
   </div>
 </div>
