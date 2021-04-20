@@ -471,13 +471,13 @@ height: 100%;
               <h1>API</h1>
             </div>
             <div class="panel-body">
-              <p><strong>25$</strong> DGomApiJava</p>
+              <p><strong>1$</strong> DGomApiJava</p>
               <p><strong></strong> </p>
             </div>
             <div class="panel-footer">
-              <h3>$25</h3>
+              <h3>$1</h3>
               <h4>Precio del Api</h4>
-<!--div id="smart-button-container">
+<div id="smart-button-container">
       <div style="text-align: center;">
         <div id="paypal-button-container"></div>
       </div>
@@ -487,10 +487,10 @@ height: 100%;
     function initPayPalButton() {
       paypal.Buttons({
         style: {
-          shape: 'rect',
+          shape: 'pill',
           color: 'silver',
           layout: 'vertical',
-          label: 'paypal',
+          label: 'buynow',
           
         },
 
@@ -502,7 +502,8 @@ height: 100%;
 
         onApprove: function(data, actions) {
           return actions.order.capture().then(function(details) {
-            alert('Transaction completed by ' + details.payer.name.given_name + '!');
+             $('#btnDescarga').css('visibility', 'visible');
+             document.getElementById('from-alert').innerHTML="<p>Su Transaccion fue exitosa para "+ details.name.given_name+"</p>";
           });
         },
 
@@ -512,8 +513,11 @@ height: 100%;
       }).render('#paypal-button-container');
     }
     initPayPalButton();
-  </script-->
+  </script>
             </div>
+<div id="from-alert" class='alert alert-info' role='alert'>
+    
+</div>            
 <div class="panel-footer">
 <input type="submit" class="btn_descargar" id="btnDescarga" onclick="descargar_objeto();" value="Descargar" name="Descargar">
             </div>
@@ -581,6 +585,7 @@ height: 100%;
          window.open(url, 'Download');
          sessionStorage.setItem("succesfull",0);
          $('#btnDescarga').css('visibility', 'hidden');
+         document.getElementById('from-alert').innerHTML="";
     }
 
 
