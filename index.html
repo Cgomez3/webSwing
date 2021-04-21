@@ -471,7 +471,7 @@ height: 100%;
               <h1>API</h1>
             </div>
             <div class="panel-body">
-              <p><strong>1$</strong> DGomApiJava</p>
+              <p><strong>$1</strong> DGomApiJava</p>
               <p><strong></strong> </p>
             </div>
             <div class="panel-footer">
@@ -508,7 +508,7 @@ height: 100%;
         },
 
         onError: function(err) {
-          console.log(err);
+          document.getElementById('from-alert').innerHTML="<p>Error:  "+ err +"</p>";
         }
       }).render('#paypal-button-container');
     }
