@@ -444,6 +444,108 @@ img.imagen-boton {
       </div>
 </div>
 
+
+<div class="card">
+      <div class="thumbnail">
+          <h1><b class="control-label">D_ComboBox</b>(JComboBox)</h1> 
+           <p>El control D_ComboBox(JComboBox) permite seleccionar un String de una lista. Para inicializar los String que contendrá el JComboBox debemos llamar al método addItem tantas veces como elementos queremos cargar. Un evento muy útil con este control es cuando el operador selecciona un Item de la lista</p>
+           <P>
+            <p><h3>Paso 1</h3><br/>
+            Creamos un clase Icono con todos los metodos get y set y el valor que se mostrara en el combobox estara declarado en el metodo toString()<br/> <br/>public class Icono {<br/>
+        private int id;<br/>
+        private String nombre;<br/>
+        private ImageIcon icono;<br/>
+        get()...<br/>
+        set()..<br/>
+
+          //Este metodo es muy importarte porque este se mostrara en la lista que se desplega del combobox.<br/>
+          @Override<br/>
+          public String toString() {<br/>
+              return nombre; <br/>
+          }<br/>
+        }<br/>
+        <h3>Paso 2</h3><br/>
+        Instanciamos un List y pasando el objeto.<br/>
+        List<Icono> listas= new ArrayList<>();<br/>
+        Icono datos= new Icono();<br/>
+        datos.setId(1);<br/>
+        datos.setNombre("Twitter");<br/>
+        datos.setIcono(new ImageIcon(AppPrueba.class.getResource("twitter.png")));<br/>
+        listas.add(datos);<br/>
+        ...<br/>
+
+        <h3>Paso 3</h3><br/>
+           </p>
+           <b class="control-label">D_ComboBox</b> cboIcons= <b class="control-label">new D_ComboBox</b> (D_ComboBox.TypeObject.ICON, 2, 10, Color.WHITE,Color.BLACK,Color.RED);</br>
+          cboIcons.setPreferredSize(new Dimension(200, 40));</br>
+          //aqui agregamos la lista de Objetos.</br>
+        cboIcons.addItemObjectList(listas);</br></P>
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="thumbnail card img-small">
+                <p>ICON</p>
+              <img src="img/jcombobox2.png" alt="New York" width="100" height="100">
+              <p>Expanded</p>
+              <img src="img/jcombobox1.png" alt="New York" width="100" height="100">
+              <center><p>D_ComboBox.TypeObject.ICON, Stroke=2 y arc=10</p></center>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="thumbnail card img-small">
+                <p>AUTOCOMPLETE ICON</p>
+              <img src="img/jcombobox4.png" alt="New York" width="100" height="100">
+              <center><p>D_ComboBox.TypeObject.AUTOCOMPLETE_ICON, Stroke=2 y arc=10</p></center>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="thumbnail card img-small">
+                <p>AUTOCOMPLETE</p>
+              <img  src="img/jcombobox3.png" alt="New York" width="50" height="50">
+              <center><p class="texto-plano">D_ComboBox.TypeObject.AUTOCOMPLETE, Stroke=1 y arc=0</p></center>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            
+            <div class="col-sm-4">
+              <div class="thumbnail card img-small">
+              <p>CHECKBOX</p>
+              <img src="img/jcombobox5.png" alt="New York" width="100" height="100">
+              <center><p>D_ComboBox.TypeObject.CHECKBOX, Stroke=1 y arc=10</p></center>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="thumbnail card img-small">
+                <p>RADIOBUTTON</p>
+              <img  src="img/jcombobox6.png" alt="New York" width="50" height="50">
+              <center><p class="texto-plano">D_ComboBox.TypeObject.RADIOBUTTON, Stroke=1 y arc=0</p></center>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="thumbnail card img-small">
+                <p>DEFAULT</p>
+              <img src="img/jcombobox7.png" alt="New York" width="100" height="100">
+              <center><p>D_ComboBox.TypeObject.DEFAULT, Stroke=2 y arc=10</p></center>
+              </div>
+            </div>
+          </div>
+          
+          
+          
+        <h2>Constructores</h2>
+        <p>En la siguiente imagen mostramos algunos contructores que se puede usar </p>
+        <div class="row">
+          <div class="col-sm-8">
+            <div class="thumbnail card">
+
+              <img src="img/jcombobox8.png" alt="New York" width="100" height="100">
+            </div>
+          </div>
+        </div>   
+  </div>
+
+</div>
+
   </div>
 </div>
 
