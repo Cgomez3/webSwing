@@ -61,11 +61,20 @@
     border: none;
     border-radius: 0;
   }
-  .thumbnail img {
+  .thumbnail .constructor {
     width: 100%;
-    height: 100%;
     margin-bottom: 10px;
   }
+  .thumbnail .pasos {
+    width: 65%;
+    margin-bottom: 10px;
+  }
+  .thumbnail .images {
+    width: 55%;
+    height: 55%;
+    margin-bottom: 10px;
+  }
+
   .carousel-control.right, .carousel-control.left {
     background-image: none;
     color: #f4511e;
@@ -264,6 +273,9 @@ height: 100%;
 img.imagen-boton {
     width: 120px;
 }
+.img-control{
+  width: 50%;
+}
   </style>
   <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
   <!--link rel="stylesheet" href="../main.css"/-->
@@ -307,18 +319,18 @@ img.imagen-boton {
          
          <div class="thumbnail">
           <p>Paso 1</p>
-            <img src="img/ejemplo01.png" alt="New York" width="300" height="150">
+            <img src="img/ejemplo01.png" class="pasos">
         
         </div>
         
         <div class="thumbnail">
           <p>Paso 2</p>
-            <img src="img/ejemplo02.png" alt="New York" width="100" height="100">
+            <img src="img/ejemplo02.png" class="pasos">
         
         </div>
         <div class="thumbnail">
           <p>Paso 3</p>
-            <img src="img/ejemplo03.png" alt="New York" width="100" height="100">
+            <img src="img/ejemplo03.png" class="pasos">
         
         </div>
     </div>
@@ -337,13 +349,13 @@ img.imagen-boton {
         <div class="row">
           <div class="col-sm-4">
             <div class="thumbnail card img-small">
-            <img src="img/labelresultado.png" alt="New York" width="100" height="100">
+            <img src="img/labelresultado.png" alt="New York" class="img-control">
             <center><p>Stroke=2 y arc=20</p></center>
             </div>
           </div>
           <div class="col-sm-4">
             <div class="thumbnail card img-small">
-            <img src="img/labelresultado2.png" alt="New York" width="100" height="100">
+            <img src="img/labelresultado2.png" alt="New York" class="img-control">
             <center><p>Stroke=1 y arc=10</p></center>
             </div>
           </div>
@@ -355,8 +367,7 @@ img.imagen-boton {
       <div class="row">
         <div class="col-sm-8">
           <div class="thumbnail card">
-
-            <img src="img/constructorlabel.png" alt="New York" width="100" height="100">
+            <img class="constructor" src="img/constructorlabel.png" >
           </div>
         </div>
       </div>
@@ -376,13 +387,13 @@ img.imagen-boton {
           <div class="row">
             <div class="col-sm-4">
               <div class="thumbnail card img-small">
-              <img src="img/jtextfielresultado.png" alt="New York" width="100" height="100">
+              <img src="img/jtextfielresultado.png" alt="New York" class="img-control">
               <center><p>D_TextField.Type.NUMERIC, Stroke=2 y arc=10</p></center>
               </div>
             </div>
             <div class="col-sm-4">
               <div class="thumbnail card img-small">
-              <img src="img/jtextfielresultado2.png" alt="New York" width="100" height="100">
+              <img src="img/jtextfielresultado2.png" alt="New York" class="img-control">
               <center><p>D_TextField.Type.CHARACTER, Stroke=1 y arc=5</p></center>
               </div>
             </div>
@@ -395,7 +406,7 @@ img.imagen-boton {
           <div class="col-sm-8">
             <div class="thumbnail card">
 
-              <img src="img/constructortextfield.png" alt="New York" width="100" height="100">
+              <img class="constructor" src="img/constructortextfield.png" alt="New York" width="100" height="100">
             </div>
           </div>
         </div>      
@@ -412,19 +423,19 @@ img.imagen-boton {
           <div class="row">
             <div class="col-sm-4">
               <div class="thumbnail card img-small">
-              <img src="img/jbuttonsquare.png" alt="New York" width="100" height="100">
+              <img src="img/jbuttonsquare.png" class="img-control">
               <center><p>D_Button.TypeButton.SQUARE, Stroke=2 y arc=0</p></center>
               </div>
             </div>
             <div class="col-sm-4">
               <div class="thumbnail card img-small">
-              <img src="img/jbuttonrounded.png" alt="New York" width="100" height="100">
+              <img src="img/jbuttonrounded.png" class="img-control">
               <center><p>D_Button.TypeButton.ROUNDED_CORNER, Stroke=1 y arc=10</p></center>
               </div>
             </div>
             <div class="col-sm-4">
               <div class="thumbnail card img-small">
-              <img  class="imagen-boton" src="img/jbuttoncircle.png" alt="New York" width="50" height="50">
+              <img  class="imagen-boton" src="img/jbuttoncircle.png" class="img-control">
               <center><p class="texto-plano">D_Button.TypeButton.CIRCLE, Stroke=1 y arc=0 <br/>btnTwitter.setPreferredSize(new Dimension(70,70)</p></center>
               </div>
             </div>
@@ -437,7 +448,7 @@ img.imagen-boton {
           <div class="col-sm-8">
             <div class="thumbnail card">
 
-              <img src="img/constructorbutton.png" alt="New York" width="100" height="100">
+              <img class="constructor"  src="img/constructorbutton.png" alt="New York" width="100" height="100">
             </div>
           </div>
         </div>      
@@ -484,23 +495,23 @@ img.imagen-boton {
             <div class="col-sm-4">
               <div class="thumbnail card img-small">
                 <p>ICON</p>
-              <img src="img/jcombobox2.png" alt="New York" width="100" height="100">
+              <img src="img/jcombobox2.png" class="img-control">
               <p>Expanded</p>
-              <img src="img/jcombobox1.png" alt="New York" width="100" height="100">
+              <img src="img/jcombobox1.png" class="img-control">
               <center><p>D_ComboBox.TypeObject.ICON, Stroke=2 y arc=10</p></center>
               </div>
             </div>
             <div class="col-sm-4">
               <div class="thumbnail card img-small">
                 <p>AUTOCOMPLETE ICON</p>
-              <img src="img/jcombobox4.png" alt="New York" width="100" height="100">
+              <img src="img/jcombobox4.png" class="img-control">
               <center><p>D_ComboBox.TypeObject.AUTOCOMPLETE_ICON, Stroke=2 y arc=10</p></center>
               </div>
             </div>
             <div class="col-sm-4">
               <div class="thumbnail card img-small">
                 <p>AUTOCOMPLETE</p>
-              <img  src="img/jcombobox3.png" alt="New York" width="50" height="50">
+              <img  src="img/jcombobox3.png" class="img-control">
               <center><p class="texto-plano">D_ComboBox.TypeObject.AUTOCOMPLETE, Stroke=1 y arc=0</p></center>
               </div>
             </div>
@@ -510,21 +521,21 @@ img.imagen-boton {
             <div class="col-sm-4">
               <div class="thumbnail card img-small">
               <p>CHECKBOX</p>
-              <img src="img/jcombobox5.png" alt="New York" width="100" height="100">
+              <img src="img/jcombobox5.png" class="img-control">
               <center><p>D_ComboBox.TypeObject.CHECKBOX, Stroke=1 y arc=10</p></center>
               </div>
             </div>
             <div class="col-sm-4">
               <div class="thumbnail card img-small">
                 <p>RADIOBUTTON</p>
-              <img  src="img/jcombobox6.png" alt="New York" width="50" height="50">
+              <img  src="img/jcombobox6.png" class="img-control">
               <center><p class="texto-plano">D_ComboBox.TypeObject.RADIOBUTTON, Stroke=1 y arc=0</p></center>
               </div>
             </div>
             <div class="col-sm-4">
               <div class="thumbnail card img-small">
                 <p>DEFAULT</p>
-              <img src="img/jcombobox7.png" alt="New York" width="100" height="100">
+              <img src="img/jcombobox7.png" class="img-control">
               <center><p>D_ComboBox.TypeObject.DEFAULT, Stroke=2 y arc=10</p></center>
               </div>
             </div>
@@ -538,7 +549,7 @@ img.imagen-boton {
           <div class="col-sm-8">
             <div class="thumbnail card">
 
-              <img src="img/jcombobox8.png" alt="New York" width="100" height="100">
+              <img  class="constructor"  src="img/jcombobox8.png" alt="New York" width="100" height="100">
             </div>
           </div>
         </div>   
